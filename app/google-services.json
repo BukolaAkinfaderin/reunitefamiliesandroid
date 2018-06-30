@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "463470163881",
+    "firebase_url": "https://reunitefamilies-28bee.firebaseio.com",
+    "project_id": "reunitefamilies-28bee",
+    "storage_bucket": "reunitefamilies-28bee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463470163881:android:be36ce8bcdde4b39",
+        "android_client_info": {
+          "package_name": "com.reunitefamilies.reunitefamilies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463470163881-vc4tcrmrtjbdtmccpqd8p2auvssbi5r1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmRdlIySSkeWnnumB0njR3C4dcSdpmOYw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
