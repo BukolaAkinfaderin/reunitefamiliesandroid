@@ -1,16 +1,32 @@
 package com.reunitefamilies.reunitefamilies.models
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import com.google.firebase.database.IgnoreExtraProperties
 
-@Parcelize
-data class Children (
-        val country_of_origin: String,
-        val dob: String,
-        val firstname: String,
-        val lastname: String,
-        val location: String,
-        val max_age: Int,
-        val min_age: Int,
-        val reunite_status: String
-): Parcelable
+import java.io.Serializable
+
+@IgnoreExtraProperties
+class Children : Serializable {
+
+    var country_of_origin: String? = null
+    var dob: String? = null
+    var first_name: String? = null
+    var last_name: String? = null
+    var location: String? = null
+    var age: Int? = null
+    var reunite_status: String? = null
+
+    constructor() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+    constructor(countryOfOrigin: String, dob: String, firstName: String, lastName: String, location: String, age: Int, reuniteStatus: String) {
+        this.country_of_origin = countryOfOrigin
+        this.dob = dob
+        this.first_name = firstName
+        this.last_name = lastName
+        this.location = location
+        this.age = age
+        this.reunite_status = reuniteStatus
+    }
+
+}

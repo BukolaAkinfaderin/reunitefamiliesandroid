@@ -11,8 +11,8 @@ import com.reunitefamilies.reunitefamilies.R
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
-
-
+import com.reunitefamilies.reunitefamilies.models.Children
+import android.widget.Toast
 
 class SignInActivity: AppCompatActivity() {
     companion object {
@@ -26,6 +26,7 @@ class SignInActivity: AppCompatActivity() {
     private lateinit var coordinatior: Contract.Coordination
 
     private lateinit var mDatabaseReference: DatabaseReference
+    private lateinit var mPostReference: DatabaseReference
 
     fun provide(coordinatior: Contract.Coordination, presenter: Contract.Presentation){
         this.presenter = presenter
@@ -38,23 +39,41 @@ class SignInActivity: AppCompatActivity() {
 
         Dependencies().inject(this)
 
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference("message")
-        mDatabaseReference.setValue("Hello, World!")
+        mDatabaseReference = FirebaseDatabase.getInstance().reference
 
+        mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
+                Children("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
 
+        // Attach a listener to read the data at our posts reference
         mDatabaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                val value = dataSnapshot.getValue(String::class.java)
-                Log.d("Testing", "Value is: " + value!!)
+                val post = dataSnapshot.getValue<Children>(Children::class.java)
+                Log.d("Testing", "Post is: " + post as Children)
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.w("Testing", "Failed to read value.", error.toException())
+            override fun onCancelled(databaseError: DatabaseError) {
+                println("The read failed: " + databaseError.code)
             }
         })
 
+        mPostReference = FirebaseDatabase.getInstance().getReference().child("children")
+
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // Get Post object and use the values to update the UI
+                val post = dataSnapshot.getValue<Children>(Children::class.java)
+                Log.d("Testing", "Post is: " + post as Children)
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Getting Post failed, log a message
+                Log.w("Testing", "loadPost:onCancelled", databaseError.toException())
+
+                Toast.makeText(this@SignInActivity, "Failed to load post.", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+        mPostReference.addValueEventListener(postListener)
     }
 }
