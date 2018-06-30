@@ -38,7 +38,9 @@ class SignInActivity: AppCompatActivity() {
 
         Dependencies().inject(this)
 
-        mDatabaseReference = FirebaseDatabase.getInstance().reference
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("message")
+        mDatabaseReference.setValue("Hello, World!")
+
 
         mDatabaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
