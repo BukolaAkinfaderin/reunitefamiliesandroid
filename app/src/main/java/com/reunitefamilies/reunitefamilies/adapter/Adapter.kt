@@ -2,6 +2,7 @@ package com.reunitefamilies.reunitefamilies.adapter
 
 import com.airbnb.epoxy.EpoxyAdapter
 import com.reunitefamilies.reunitefamilies.adapter.models.ChildRowModel
+import com.reunitefamilies.reunitefamilies.adapter.models.UploadChildFormModel
 
 open class Adapter: EpoxyAdapter() {
 
@@ -13,8 +14,8 @@ open class Adapter: EpoxyAdapter() {
         addModel(ChildRowModel(firstName, lastName))
     }
 
-    fun clear() {
-        clear()
+    fun uploadChildForm(function: (String, String, String) -> Unit) {
+        addModel(UploadChildFormModel(function))
     }
 
 }

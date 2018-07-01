@@ -50,15 +50,15 @@ class SignInActivity: AppCompatActivity() {
         adapter = Adapter()
         list.adapter = adapter
 
-        mDatabaseReference = FirebaseDatabase.getInstance().reference
-        mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
-                Child("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
-
+//        mDatabaseReference = FirebaseDatabase.getInstance().reference
+//        mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
+//                Child("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
+//
 //        // Attach a listener to read the data at our posts reference
 //        mDatabaseReference.addValueEventListener(object : ValueEventListener {
 //            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                val post = dataSnapshot.getValue<Children>(Children::class.java)
-//                Log.d("Testing", "Post is: " + post as Children)
+//                val post = dataSnapshot.getValue<Child>(Child::class.java)
+//                Log.d("Testing", "Post is: " + post as Child)
 //            }
 //
 //            override fun onCancelled(databaseError: DatabaseError) {
@@ -66,22 +66,8 @@ class SignInActivity: AppCompatActivity() {
 //            }
 //        })
 
-        // Attach a listener to read the data at our posts reference
-        mDatabaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.getValue<Child>(Child::class.java)
-                Log.d("Testing", "Post is: " + post as Child)
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                println("The read failed: " + databaseError.code)
-            }
-        })
-
         val childrenList = ArrayList<Child>()
         val database = FirebaseDatabase.getInstance().reference
-
-        adapter?.clear()
 
         database.child("children").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
