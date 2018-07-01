@@ -5,7 +5,7 @@ import com.google.firebase.database.IgnoreExtraProperties
 import java.io.Serializable
 
 @IgnoreExtraProperties
-class Children : Serializable {
+class Child : Serializable {
 
     var country_of_origin: String? = null
     var dob: String? = null

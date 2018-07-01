@@ -11,7 +11,7 @@ import com.reunitefamilies.reunitefamilies.R
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
-import com.reunitefamilies.reunitefamilies.models.Children
+import com.reunitefamilies.reunitefamilies.models.Child
 import android.widget.Toast
 
 class SignInActivity: AppCompatActivity() {
@@ -42,13 +42,13 @@ class SignInActivity: AppCompatActivity() {
         mDatabaseReference = FirebaseDatabase.getInstance().reference
 
         mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
-                Children("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
+                Child("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
 
         // Attach a listener to read the data at our posts reference
         mDatabaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.getValue<Children>(Children::class.java)
-                Log.d("Testing", "Post is: " + post as Children)
+                val post = dataSnapshot.getValue<Child>(Child::class.java)
+                Log.d("Testing", "Post is: " + post as Child)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -61,8 +61,8 @@ class SignInActivity: AppCompatActivity() {
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // Get Post object and use the values to update the UI
-                val post = dataSnapshot.getValue<Children>(Children::class.java)
-                Log.d("Testing", "Post is: " + post as Children)
+                val post = dataSnapshot.getValue<Child>(Child::class.java)
+                Log.d("Testing", "Post is: " + post as Child)
 
             }
 
