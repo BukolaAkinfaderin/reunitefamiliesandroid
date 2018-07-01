@@ -13,4 +13,8 @@ open class Adapter: EpoxyAdapter() {
         addModel(ChildRowModel(firstName, lastName))
     }
 
+    fun clear() {
+        clear()
+    }
+
 }

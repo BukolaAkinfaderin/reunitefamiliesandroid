@@ -43,7 +43,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-ml-vision:16.0.0'
     implementation 'com.google.firebase:firebase-database:16.0.1'
-    
+
     implementation 'com.airbnb.android:epoxy:2.14.0'
     annotationProcessor 'com.airbnb.android:epoxy-processor:2.14.0'
 

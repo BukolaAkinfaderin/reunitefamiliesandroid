@@ -84,6 +84,7 @@ class SignInActivity: AppCompatActivity() {
 
         database.child("children").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                adapter?.clear()
                 for (childrenDataSnapshot in dataSnapshot.children) {
                     val child = childrenDataSnapshot.getValue(Child::class.java)
                     childrenList.add(child!!)
