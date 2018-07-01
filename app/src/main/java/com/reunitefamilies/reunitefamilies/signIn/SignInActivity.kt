@@ -81,10 +81,10 @@ class SignInActivity: AppCompatActivity() {
         val childrenList = ArrayList<Child>()
         val database = FirebaseDatabase.getInstance().reference
 
+        adapter?.clear()
 
         database.child("children").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                adapter?.clear()
                 for (childrenDataSnapshot in dataSnapshot.children) {
                     val child = childrenDataSnapshot.getValue(Child::class.java)
                     childrenList.add(child!!)
