@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -15,7 +14,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
 import com.reunitefamilies.reunitefamilies.adapter.Adapter
-import com.reunitefamilies.reunitefamilies.models.Children
+import com.reunitefamilies.reunitefamilies.models.Child
 
 class SignInActivity: AppCompatActivity() {
     companion object {
@@ -53,7 +52,7 @@ class SignInActivity: AppCompatActivity() {
 
         mDatabaseReference = FirebaseDatabase.getInstance().reference
         mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
-                Children("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
+                Child("origin", "dob", "first_name", "last_name", "location", 5, "pending" ))
 
 //        // Attach a listener to read the data at our posts reference
 //        mDatabaseReference.addValueEventListener(object : ValueEventListener {
@@ -67,14 +66,26 @@ class SignInActivity: AppCompatActivity() {
 //            }
 //        })
 
-        val childrenList = ArrayList<Children>()
+        // Attach a listener to read the data at our posts reference
+        mDatabaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val post = dataSnapshot.getValue<Child>(Child::class.java)
+                Log.d("Testing", "Post is: " + post as Child)
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                println("The read failed: " + databaseError.code)
+            }
+        })
+
+        val childrenList = ArrayList<Child>()
         val database = FirebaseDatabase.getInstance().reference
 
 
         database.child("children").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (childrenDataSnapshot in dataSnapshot.children) {
-                    val child = childrenDataSnapshot.getValue(Children::class.java)
+                    val child = childrenDataSnapshot.getValue(Child::class.java)
                     childrenList.add(child!!)
                     adapter?.childRow(child.first_name!!, child.last_name!!)
                 }
