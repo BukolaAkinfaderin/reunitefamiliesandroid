@@ -23,7 +23,8 @@
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="text" />
         <!-- To use multiple models: android:value="face,text,model2,model3" -->
-        <activity android:name=".upLoadChildScreen.UploadChildActivity"></activity>
+        <activity android:name=".upLoadChildScreen.UploadChildActivity" />
+        <activity android:name=".signup.SignupActivity"></activity>
     </application>
 
 </manifest>

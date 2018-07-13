@@ -4,9 +4,16 @@ import com.reunitefamilies.reunitefamilies.models.Child;
 
 import io.reactivex.Observable;
 
-public interface UploadChildPresenter {
+public class UploadChildPresenter implements UploadChildContract.Presentation {
+    private  UploadChildInteractor mInteractor;
 
-    Observable<String> uploadChild(Child child);
-    void onDestroy();
+    @Override
+    public void UploadChildPresenterImpl(UploadChildInteractor interactor) {
+        mInteractor = interactor;
+    }
 
+    @Override
+    public Observable<String> uploadChild(Child child) {
+        return mInteractor.uploadChild(child);
+    }
 }

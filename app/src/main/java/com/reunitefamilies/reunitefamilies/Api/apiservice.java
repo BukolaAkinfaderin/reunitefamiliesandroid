@@ -1,4 +1,4 @@
-package com.reunitefamilies.reunitefamilies.service;
+package com.reunitefamilies.reunitefamilies.Api;
 
 
 
@@ -13,14 +13,14 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 
-public class service {
+public class apiservice {
 
-    private static service sSharedInstance;
+    private static apiservice sSharedInstance;
 
 
-    public static service getSharedInstance() {
+    public static apiservice getSharedInstance() {
         if (sSharedInstance == null) {
-            sSharedInstance = new service();
+            sSharedInstance = new apiservice();
         }
         return sSharedInstance;
     }
