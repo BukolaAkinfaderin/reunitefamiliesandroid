@@ -10,7 +10,7 @@ interface Contract {
     }
 
     interface Coordination {
-        fun signInWasTapped(reuniteFamilies: ReuniteFamilies)
-        fun logInWasTapped(reuniteFamilies: ReuniteFamilies)
+        fun signInWasTapped(activity: ReuniteFamilies)
+        fun logInWasTapped(activity: ReuniteFamilies)
     }
 }
