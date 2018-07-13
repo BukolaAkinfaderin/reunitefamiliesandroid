@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".signIn.SignInActivity" />
+        <activity android:name=".logIn.LogInActivity" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
