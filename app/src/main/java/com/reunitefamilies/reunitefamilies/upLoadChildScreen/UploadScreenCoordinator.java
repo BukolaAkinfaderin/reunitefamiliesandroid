@@ -1,9 +1,11 @@
 package com.reunitefamilies.reunitefamilies.upLoadChildScreen;
 
+import android.app.Activity;
+
 public class UploadScreenCoordinator implements UploadChildContract.Coordination {
 
 
-    public UploadScreenCoordinator(UploadChildPresenter presenter){
+    public UploadScreenCoordinator(Activity activity){
 
     }
 

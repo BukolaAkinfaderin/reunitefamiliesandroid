@@ -6,11 +6,13 @@ import io.reactivex.Observable;
 
 public class UploadChildPresenter implements UploadChildContract.Presentation {
     private  UploadChildInteractor mInteractor;
+    private UploadScreenCoordinator mCoordinator;
 
-    @Override
-    public void UploadChildPresenterImpl(UploadChildInteractor interactor) {
-        mInteractor = interactor;
-    }
+  public UploadChildPresenter(UploadChildInteractor interactor, UploadScreenCoordinator coordinator) {
+      mInteractor = interactor;
+      mCoordinator = coordinator;
+  }
+
 
     @Override
     public Observable<String> uploadChild(Child child) {

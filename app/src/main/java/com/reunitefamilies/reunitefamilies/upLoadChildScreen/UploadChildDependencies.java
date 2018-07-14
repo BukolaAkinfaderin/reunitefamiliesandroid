@@ -10,14 +10,17 @@ public class UploadChildDependencies {
 
     public static void inject(Activity activity) {
 
-       // if (activity instanceof UploadChildActivity) {
-       //     UpLoadChildInteractorImpl interactor = new UpLoadChildInteractorImpl();
-       //     final UploadChildPresenter presenter = new UploadChildPresenterImpl(interactor) {
-       //     };
+        if (activity instanceof UploadChildActivity) {
+            UploadChildInteractor interactor = new UploadChildInteractor();
+            UploadScreenCoordinator coordinator = new UploadScreenCoordinator(activity);
+            final UploadChildPresenter presenter = new UploadChildPresenter(interactor, coordinator) ;
 
-       //     ((UploadChildActivity) activity).provide(presenter);
 
-       // }
+
+
+           ((UploadChildActivity) activity).provide(presenter);
+
+        }
 
 
 

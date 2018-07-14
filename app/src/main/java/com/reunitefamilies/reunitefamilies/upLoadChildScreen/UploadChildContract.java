@@ -11,7 +11,7 @@ public interface UploadChildContract {
     }
 
     interface Presentation {
-        void UploadChildPresenterImpl(final UploadChildInteractor interactor);
+
         Observable<String> uploadChild(Child child);
     }
 
