@@ -2,4 +2,29 @@
     <string name="app_name">ReuniteFamilies</string>
     <string name="sign_in">Sign In</string>
     <string name="log_in">Log In</string>
+    <string name="sign_up">Sign up</string>
+
+
+    <string name="main_screen_title">I am looking for my Child</string>
+
+
+    <!--======================= FONTS ==============================-->
+
+    <string name="SourceSansPro">SourceSansPro</string>
+    <string name="SourceSansPro_Black">SourceSansPro-Black.ttf</string>
+    <string name="SourceSansPro_BlackItalic">SourceSansPro-BlackItalic.ttf</string>
+    <string name="SourceSansPro_Bold">SourceSansPro-Bold.ttf</string>
+    <string name="SourceSansPro_BoldItalic">SourceSansPro-BoldItalic.ttf</string>
+    <string name="SourceSansPro_ExtraLight">SourceSansPro-ExtraLight.ttf</string>
+    <string name="SourceSansPro_ExtraLightItalic">SourceSansPro-ExtraLightItalic.ttf</string>
+    <string name="SourceSansPro_Italic">SourceSansPro-Italic.ttf</string>
+    <string name="SourceSansPro_Light">SourceSansPro-Light.ttf</string>
+    <string name="SourceSansPro_Regular">SourceSansPro-Regular.ttf</string>
+    <string name="SourceSansPro_Semibold">SourceSansPro-Semibold.ttf</string>
+    <string name="SourceSansPro_SemiboldItalic">SourceSansPro-SemiboldItalic.ttf</string>
+
+    <string name="Montserrat_Regular">Montserrat-Regular</string>
+    <string name="Montserrat_SemiBold">Montserrat-SemiBold</string>
+    <string name="Montserrat_Black">Montserrat-Black</string>
+    <string name="Montserrat_ExtraBold">Montserrat-ExtraBold</string>
 </resources>

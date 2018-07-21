@@ -13,7 +13,7 @@ import com.reunitefamilies.reunitefamilies.R
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
-import com.reunitefamilies.reunitefamilies.adapter.Adapter
+import com.reunitefamilies.reunitefamilies.adapter.UploadChildAdapter
 import com.reunitefamilies.reunitefamilies.models.Child
 
 class SignInActivity: AppCompatActivity() {
@@ -28,7 +28,7 @@ class SignInActivity: AppCompatActivity() {
     private lateinit var coordinatior: Contract.Coordination
 
     private lateinit var list: RecyclerView
-    private var adapter: Adapter? = null
+    private var uploadChildAdapter: UploadChildAdapter? = null
 
     private lateinit var mDatabaseReference: DatabaseReference
 
@@ -47,8 +47,8 @@ class SignInActivity: AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         list.layoutManager = layoutManager
 
-        adapter = Adapter()
-        list.adapter = adapter
+        uploadChildAdapter = UploadChildAdapter()
+        list.adapter = uploadChildAdapter
 
 //        mDatabaseReference = FirebaseDatabase.getInstance().reference
 //        mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
@@ -74,7 +74,7 @@ class SignInActivity: AppCompatActivity() {
                 for (childrenDataSnapshot in dataSnapshot.children) {
                     val child = childrenDataSnapshot.getValue(Child::class.java)
                     childrenList.add(child!!)
-                    adapter?.childRow(child.first_name!!, child.last_name!!)
+                    uploadChildAdapter?.childRow(child.first_name!!, child.last_name!!)
                 }
 
                 Log.d("Testing", ">>>>> children List is: " + childrenList)

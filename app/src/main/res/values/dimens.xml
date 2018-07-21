@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="heading_text">30sp</dimen>
+    <dimen name="body_text">16sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--//////////////////////////////////////////////////////////
+  //// Define the 8dp grid
+  //////////////////////////////////////////////////////////////-->
+    <dimen name="grid_half">4dp</dimen>
+    <dimen name="grid_one">8dp</dimen>
+    <dimen name="grid_one_point_five">12dp</dimen>
+    <dimen name="grid_two">16dp</dimen>
+    <dimen name="grid_two_point_five">20dp</dimen>
+    <dimen name="grid_three">24dp</dimen>
+    <dimen name="grid_three_point_five">28dp</dimen>
+    <dimen name="grid_four">32dp</dimen>
+    <dimen name="grid_four_point_five">36dp</dimen>
+    <dimen name="grid_five">40dp</dimen>
+    <dimen name="grid_five_point_five">44dp</dimen>
+    <dimen name="grid_six">48dp</dimen>
+    <dimen name="grid_seven">56dp</dimen>
+    <dimen name="grid_seven_point_five">60dp</dimen>
+    <dimen name="grid_eight">64dp</dimen>
+    <dimen name="grid_nine">72dp</dimen>
+    <dimen name="grid_ten">80dp</dimen>
+    <dimen name="grid_twelve">96dp</dimen>
+    <dimen name="grid_thirteen">104dp</dimen>
+    <dimen name="grid_fourteen">112dp</dimen>
+    <dimen name="grid_fifteen">120dp</dimen>
+    <dimen name="grid_sixteen">128dp</dimen>
+</resources>
