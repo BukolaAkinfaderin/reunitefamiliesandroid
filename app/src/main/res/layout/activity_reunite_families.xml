@@ -25,7 +25,7 @@
     <com.reunitefamilies.reunitefamilies.fontViews.FontButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
+        android:text="@string/register"
         android:layout_marginBottom="@dimen/grid_two"
         style="@style/btnStylePrimary"/>
     <android.support.v7.widget.AppCompatButton

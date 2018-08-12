@@ -43,12 +43,12 @@ class SignInActivity: AppCompatActivity() {
 
         Dependencies().inject(this)
 
-        list = findViewById(R.id.list)
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        list.layoutManager = layoutManager
-
-        uploadChildAdapter = UploadChildAdapter()
-        list.adapter = uploadChildAdapter
+//        list = findViewById(R.id.list)
+//        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+//        list.layoutManager = layoutManager
+//
+//        uploadChildAdapter = UploadChildAdapter()
+//        list.adapter = uploadChildAdapter
 
 //        mDatabaseReference = FirebaseDatabase.getInstance().reference
 //        mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
@@ -66,23 +66,23 @@ class SignInActivity: AppCompatActivity() {
 //            }
 //        })
 
-        val childrenList = ArrayList<Child>()
-        val database = FirebaseDatabase.getInstance().reference
+//        val childrenList = ArrayList<Child>()
+//        val database = FirebaseDatabase.getInstance().reference
 
-        database.child("children").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (childrenDataSnapshot in dataSnapshot.children) {
-                    val child = childrenDataSnapshot.getValue(Child::class.java)
-                    childrenList.add(child!!)
-                    uploadChildAdapter?.childRow(child.first_name!!, child.last_name!!)
-                }
-
-                Log.d("Testing", ">>>>> children List is: " + childrenList)
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                println("The read failed: " + databaseError.code)
-            }
-        })
+//        database.child("children").addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                for (childrenDataSnapshot in dataSnapshot.children) {
+//                    val child = childrenDataSnapshot.getValue(Child::class.java)
+//                    childrenList.add(child!!)
+//                    uploadChildAdapter?.childRow(child.first_name!!, child.last_name!!)
+//                }
+//
+//                Log.d("Testing", ">>>>> children List is: " + childrenList)
+//            }
+//
+//            override fun onCancelled(databaseError: DatabaseError) {
+//                println("The read failed: " + databaseError.code)
+//            }
+//        })
     }
 }

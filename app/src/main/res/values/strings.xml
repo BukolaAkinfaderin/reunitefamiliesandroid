@@ -2,10 +2,20 @@
     <string name="app_name">ReuniteFamilies</string>
     <string name="sign_in">Sign In</string>
     <string name="log_in">Log In</string>
-    <string name="sign_up">Sign up</string>
+    <string name="register">Register</string>
 
 
-    <string name="main_screen_title">I am looking for my Child</string>
+    <string name="main_screen_title">I am looking for</string>
+    <string name="main_screen_title2">my Child.</string>
+
+    <string name="have_account">I have an account.</string>
+    <string name="description_register">If you are a parent or  guardian seeking your child, sign in here.</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+
 
 
     <!--======================= FONTS ==============================-->
