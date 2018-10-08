@@ -85,6 +85,7 @@ android:background="@color/lightgray"
             android:layout_gravity="bottom"
             android:layout_marginBottom="@dimen/grid_one"/>
         <TextView
+            android:id="@+id/not_added1"
             android:gravity="center|center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -122,6 +123,7 @@ android:background="@color/lightgray"
         android:layout_gravity="bottom"
         android:layout_marginBottom="@dimen/grid_one"/>
         <TextView
+            android:id="@+id/not_added2"
             android:gravity="center|center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -155,6 +157,7 @@ android:background="@color/lightgray"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="@dimen/grid_one"/>
             <TextView
+                android:id="@+id/not_added3"
                 android:gravity="center|center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

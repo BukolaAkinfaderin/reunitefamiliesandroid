@@ -44,35 +44,58 @@
     <android.support.v7.widget.CardView
         android:layout_margin="@dimen/grid_half"
         android:layout_weight="1"
-        android:id="@+id/volunteer1_case"
+        android:id="@+id/volunteer1"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         card_view:cardCornerRadius="6dp"
         card_view:cardElevation="4dp"
         card_view:cardMaxElevation="6dp"
         android:layout_width="100dp"
         android:layout_height="100dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <ImageView
         android:layout_width="wrap_content"
         android:src="@drawable/volunteer1"
         android:scaleType="centerCrop"
         android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/checkmark1"
+            android:baselineAlignBottom="true"
+            android:layout_marginLeft="@dimen/grid_one"
+            android:layout_width="100dp"
+            android:visibility="invisible"
+            android:src="@drawable/green_check"
+            android:layout_height="100dp" />
+        </FrameLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:layout_margin="@dimen/grid_half"
-        android:layout_weight="1"
-        android:id="@+id/volunteer2"
+       android:id="@+id/volunteer2"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         card_view:cardCornerRadius="6dp"
         card_view:cardElevation="4dp"
         card_view:cardMaxElevation="6dp"
         android:layout_width="100dp"
         android:layout_height="100dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <ImageView
             android:layout_width="wrap_content"
             android:src="@drawable/volunteer2"
             android:scaleType="centerCrop"
             android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/checkmark2"
+            android:baselineAlignBottom="true"
+            android:layout_marginLeft="@dimen/grid_one"
+            android:layout_width="100dp"
+            android:src="@drawable/green_check"
+            android:visibility="invisible"
+            android:layout_height="100dp" />
+        </FrameLayout>
     </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -85,11 +108,23 @@
             card_view:cardMaxElevation="6dp"
             android:layout_width="100dp"
             android:layout_height="100dp">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <ImageView
                 android:layout_width="wrap_content"
                 android:src="@drawable/volunteer3"
                 android:scaleType="centerCrop"
                 android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/checkmark3"
+                    android:baselineAlignBottom="true"
+                    android:layout_marginLeft="@dimen/grid_one"
+                    android:visibility="invisible"
+                    android:layout_width="100dp"
+                    android:src="@drawable/green_check"
+                    android:layout_height="100dp" />
+        </FrameLayout>
         </android.support.v7.widget.CardView>
 
 

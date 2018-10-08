@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.reunitefamilies.reunitefamilies.R;
+import com.reunitefamilies.reunitefamilies.preferences.AppPreferences;
+
+import java.util.ArrayList;
 
 
 /**
@@ -65,6 +69,77 @@ public class VerificationFlowFragment extends Fragment {
        //Button actionButton = view.findViewById(R.id.verify_next_button);
 
 
+        if (layoutId == R.layout.activity_verification){
+            ArrayList<TextView> textViewArrayList = new ArrayList<>();
+            TextView add1 = view.findViewById(R.id.not_added1);
+            TextView add2 = view.findViewById(R.id.not_added2);
+            TextView add3 = view.findViewById(R.id.not_added3);
+            textViewArrayList.add(add1);
+            textViewArrayList.add(add2);
+            textViewArrayList.add(add3);
+            for (int i = 0; i < textViewArrayList.size(); i++){
+                int finalI = i;
+                int finalI1 = i;
+                textViewArrayList.get(i).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        textViewArrayList.get(finalI).setTextColor(getActivity().getApplicationContext().getResources()
+                                .getColor(R.color.mdtp_red));
+                        textViewArrayList.get(finalI1).setText("Added");
+                    }
+                });
+            }
+        }
+
+        if (layoutId == R.layout.add_child){
+            ImageView child = view.findViewById(R.id.chidImage);
+            child.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    child.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.child_sep));
+                }
+            });
+        }
+
+        if (layoutId == R.layout.case_submitted){
+            ArrayList<ImageView> imageViews = new ArrayList<>();
+            CardView image1 = view.findViewById(R.id.volunteer1);
+             CardView image2 = view.findViewById(R.id.volunteer2);
+            CardView image3 = view.findViewById(R.id.volunteer3);
+            ImageView check1 = view.findViewById(R.id.checkmark1);
+            ImageView check2 = view.findViewById(R.id.checkmark2);
+            ImageView check3 = view.findViewById(R.id.checkmark3);
+            AppPreferences preferences = new AppPreferences(getContext());
+
+            image1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    preferences.saveChosenVolunteer(R.drawable.volunteer1);
+                    check1.setVisibility(View.VISIBLE);
+                    check2.setVisibility(View.INVISIBLE);
+                    check3.setVisibility(View.INVISIBLE);
+                }
+            });
+            image2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    preferences.saveChosenVolunteer(R.drawable.volunteer2);
+                    check2.setVisibility(View.VISIBLE);
+                    check1.setVisibility(View.INVISIBLE);
+                    check3.setVisibility(View.INVISIBLE);
+                }
+            });
+            image3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    preferences.saveChosenVolunteer(R.drawable.volunteer3);
+                    check3.setVisibility(View.VISIBLE);
+                    check1.setVisibility(View.INVISIBLE);
+                    check2.setVisibility(View.INVISIBLE);
+                }
+            });
+        }
 
        // actionButton.setOnClickListener(mOnFragmentClickListener);
 

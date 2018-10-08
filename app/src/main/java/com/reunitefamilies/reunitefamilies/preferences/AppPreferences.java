@@ -46,4 +46,14 @@ public class AppPreferences {
         String json = getSharedPreferences().getString(Constants.PREFS_CurrentUser, "");
         return gson.fromJson(json, UserModel.class);
     }
+
+    public void saveChosenVolunteer(int ImageId){
+        SharedPreferences.Editor edit =  getSharedPreferences().edit();
+        edit.putInt(Constants.ImageId, ImageId);
+        edit.commit();
+    }
+
+    public int getChosenVolunteer() {
+        return  getSharedPreferences().getInt(Constants.ImageId, 0);
+    }
 }
