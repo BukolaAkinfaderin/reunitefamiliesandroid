@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="red">#FF0000</color>
+
     <color name="half_black">#808080</color>
     <color name="BaseColorBlack">#000000</color>
     <color name="BaseColorWhite">#ffffff</color>

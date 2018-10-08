@@ -6,13 +6,12 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.reunitefamilies.reunitefamilies.R
-import com.reunitefamilies.reunitefamilies.logIn.LogInActivity
-import com.reunitefamilies.reunitefamilies.signIn.SignInActivity
+import com.reunitefamilies.reunitefamilies.signIn.SigninActivity
 
 class ReuniteFamilies : AppCompatActivity() {
     companion object {
         fun startIntent(context: Context): Intent {
-            return Intent(context, SignInActivity::class.java)
+            return Intent(context, SigninActivity::class.java)
         }
     }
 

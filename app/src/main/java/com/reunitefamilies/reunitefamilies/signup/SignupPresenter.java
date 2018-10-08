@@ -1,11 +1,10 @@
 package com.reunitefamilies.reunitefamilies.signup;
 
-import com.reunitefamilies.reunitefamilies.models.Child;
 import com.reunitefamilies.reunitefamilies.signup.model.UserModel;
 
 import io.reactivex.Observable;
 
-public interface SignupInteractor {
+public interface SignupPresenter {
 
-    Observable <String> uploadUser(UserModel userModel);
+    Observable<String> uploadUser(UserModel userModel);
 }

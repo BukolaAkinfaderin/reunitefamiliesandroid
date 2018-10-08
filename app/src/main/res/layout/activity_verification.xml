@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BaseColorWhite"
+    tools:context=".IdentityVerification.VerificationActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="@dimen/grid_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/step_one"
+            android:textSize="@dimen/medium_text"
+            fontPath="fonts/Monserrat-Black.ttf"
+            tools:ignore="MissingPrefix" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/grid_two">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/body_text"
+        fontPath="fonts/Monserrat-Black.ttf"
+        tools:ignore="MissingPrefix"
+        android:textColor="@color/BaseColorWhite"
+        android:text="@string/identity_verification_heading"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:elevation="1dp"
+android:background="@color/lightgray"
+      android:layout_margin="@dimen/grid_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/grid_one"
+        android:background="@color/BaseColorWhite"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/passport"
+            android:layout_marginRight="@dimen/grid_one"/>
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/id"
+            fontPath="fonts/Monserrat-Black.ttf"
+            tools:ignore="MissingPrefix"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/grid_one"/>
+        <TextView
+            android:gravity="center|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fontPath="fonts/Monserrat-BlackItalic.ttf"
+            tools:ignore="MissingPrefix"
+            android:textColor="@color/red"
+            android:text="@string/Not_addded"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/grid_one"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/grid_one"
+        android:background="@color/BaseColorWhite"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/grid_one">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/birth_certificate"
+            android:layout_marginRight="@dimen/grid_one"/>
+
+        <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fontPath="fonts/Monserrat-Black.ttf"
+        tools:ignore="MissingPrefix"
+        android:text="@string/birth_cert"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/grid_one"/>
+        <TextView
+            android:gravity="center|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fontPath="fonts/Monserrat-BlackItalic.ttf"
+            tools:ignore="MissingPrefix"
+            android:textColor="@color/red"
+            android:text="@string/Not_addded"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/grid_one"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/grid_one"
+            android:background="@color/BaseColorWhite"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/grid_one">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/family_portrait"
+                android:layout_marginRight="@dimen/grid_one"/>
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/family_photo"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/grid_one"/>
+            <TextView
+                android:gravity="center|center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                fontPath="fonts/Monserrat-BlackItalic.ttf"
+                tools:ignore="MissingPrefix"
+                android:textColor="@color/red"
+                android:text="@string/Not_addded"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/grid_one"/>
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+       android:layout_margin="@dimen/grid_one"
+        android:background="@color/lightgray"/>
+
+
+
+
+</LinearLayout>
