@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.BaseActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:paddingLeft="@dimen/grid_one"
+        android:id="@+id/landing_user_firstname"
+        fontPath="fonts/Monserrat-Black.ttf"
+        tools:ignore="MissingPrefix"
+       android:textSize="@dimen/body_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:id="@+id/viewpager_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/verification_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"></android.support.v4.view.ViewPager>
+
+            </FrameLayout>
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/page_indicator"
+        android:layout_below="@+id/viewpager_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/grid_one"
+        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/page_indicator">
+
+    <Button
+        android:id="@+id/verify_next_button"
+        style="@style/btnStylePrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        fontPath="fonts/Roboto-Regular.ttf"
+        tools:ignore="MissingPrefix"
+        android:text="@string/next"
+        android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

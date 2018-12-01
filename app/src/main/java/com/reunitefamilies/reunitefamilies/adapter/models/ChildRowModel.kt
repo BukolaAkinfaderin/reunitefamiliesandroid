@@ -2,6 +2,7 @@ package com.reunitefamilies.reunitefamilies.adapter.models
 
 import android.view.View
 import android.widget.TextView
+import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.reunitefamilies.reunitefamilies.R
 
@@ -15,7 +16,8 @@ class ChildRowModel(private val firstName: String, private val lastName: String)
         holder.bind(firstName, lastName)
     }
 
-    inner class ItemHolder: EpoxyButterKnifeHolder() {
+    inner class ItemHolder: EpoxyHolder() {
+
 
         lateinit var firstName: TextView
         lateinit var lastName: TextView

@@ -3,6 +3,7 @@ package com.reunitefamilies.reunitefamilies.adapter.models
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.reunitefamilies.reunitefamilies.R
 
@@ -16,7 +17,7 @@ class UploadChildFormModel(private val function: (firstName: String, lastName: S
         holder.bind()
     }
 
-    inner class ItemHolder : EpoxyButterKnifeHolder() {
+    inner class ItemHolder : EpoxyHolder() {
         lateinit var firstName: EditText
         lateinit var lastName: EditText
         lateinit var location: EditText

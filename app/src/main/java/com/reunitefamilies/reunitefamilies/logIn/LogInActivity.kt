@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.google.firebase.database.*
 import com.reunitefamilies.reunitefamilies.R
-import com.reunitefamilies.reunitefamilies.adapter.Adapter
+import com.reunitefamilies.reunitefamilies.adapter.UploadChildAdapter
 import com.reunitefamilies.reunitefamilies.models.Child
 
 class LogInActivity: AppCompatActivity() {
@@ -24,7 +24,7 @@ class LogInActivity: AppCompatActivity() {
     private lateinit var coordinatior: Contract.Coordination
 
     private lateinit var list: RecyclerView
-    private var adapter: Adapter? = null
+    private var uploadChildAdapter: UploadChildAdapter? = null
 
     private lateinit var mDatabaseReference: DatabaseReference
 
@@ -44,10 +44,10 @@ class LogInActivity: AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         list.layoutManager = layoutManager
 
-        adapter = Adapter()
-        list.adapter = adapter
+        uploadChildAdapter = UploadChildAdapter()
+        list.adapter = uploadChildAdapter
 
-        adapter?.uploadChildForm { firstName, lastName, location ->
+        uploadChildAdapter?.uploadChildForm { firstName, lastName, location ->
             mDatabaseReference = FirebaseDatabase.getInstance().reference
             mDatabaseReference.child("children").child(mDatabaseReference.push().key!!).setValue(
                     Child("origin", "dob", firstName, lastName, location, 5, "pending" ))

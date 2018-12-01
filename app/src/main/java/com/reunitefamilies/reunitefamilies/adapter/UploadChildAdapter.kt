@@ -4,7 +4,7 @@ import com.airbnb.epoxy.EpoxyAdapter
 import com.reunitefamilies.reunitefamilies.adapter.models.ChildRowModel
 import com.reunitefamilies.reunitefamilies.adapter.models.UploadChildFormModel
 
-open class Adapter: EpoxyAdapter() {
+open class UploadChildAdapter: EpoxyAdapter() {
 
     init {
         this.enableDiffing()
