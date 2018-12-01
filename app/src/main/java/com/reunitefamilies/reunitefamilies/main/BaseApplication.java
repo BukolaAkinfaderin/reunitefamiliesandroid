@@ -1,11 +1,10 @@
 package com.reunitefamilies.reunitefamilies.main;
 
-
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.multidex.MultiDex;
 import com.reunitefamilies.reunitefamilies.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-
 
 /**
  * Created by bukola on 5/7/2016.
@@ -15,6 +14,13 @@ public class BaseApplication extends android.app.Application {
     private static Context sContext;
     private static BaseActivity sCurrentActivity;
     private static final String ENGLISH_US_LANG = "en-US";
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
     @Override
     public void onCreate() {
 
@@ -26,8 +32,6 @@ public class BaseApplication extends android.app.Application {
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
-
-
     }
 
     /**
@@ -61,7 +65,4 @@ public class BaseApplication extends android.app.Application {
     public static String getResourceString(final int id) {
         return sContext.getString(id);
     }
-
-
-
 }

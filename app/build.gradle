@@ -25,6 +25,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -117,8 +118,11 @@ dependencies {
 
     //runtime group: 'org.jetbrains.kotlin', name: 'kotlin-annotation-processing-gradle', version: '1.1.60-dev-13'
     compile('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
-        transitive = true;
+        transitive = true
     }
+
+    // Required for multidex
+    compile 'com.android.support:multidex:1.0.3'
 
 
 }
