@@ -10,9 +10,11 @@ import android.view.ViewGroup
 
 import com.reunitefamilies.reunitefamilies.R
 
-class LanguageSelectionFragment : Fragment() {
+class LanguageSelectionFragment : Fragment(), LanguageSelectionContract.View {
 
     private lateinit var languagesRecyclerView: RecyclerView
+
+    private val languageAdapter = LanguageSelectionAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -23,5 +25,9 @@ class LanguageSelectionFragment : Fragment() {
 
     private fun initViews(root: View) {
         languagesRecyclerView = root.findViewById(R.id.language_selection_recycler_view)
+    }
+
+    override fun setSuggestedLanguages(suggestedLanguages: List<LanguageSelection>) {
+        languageAdapter.setLanguages(suggestedLanguages)
     }
 }

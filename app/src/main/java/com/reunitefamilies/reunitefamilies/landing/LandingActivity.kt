@@ -42,7 +42,7 @@ class LandingActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
-
+        println("SEVTEST")
 
         LandingDependencies().inject(this)
         mAuth = FirebaseAuth.getInstance()

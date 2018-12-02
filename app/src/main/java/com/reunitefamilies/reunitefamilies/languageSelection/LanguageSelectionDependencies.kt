@@ -1,7 +1,14 @@
 package com.reunitefamilies.reunitefamilies.languageSelection
 
 class LanguageSelectionDependencies {
-    fun inject(fragment: LanguageSelectionFragment) {
+
+    private val languageSelectionAdapter = LanguageSelectionAdapter()
+
+
+    fun inject(fragment: LanguageSelectionContract.View) {
+//        fragment.languageAdapter = languageSelectionAdapter
 
     }
+
+
 }

@@ -4,13 +4,17 @@
 
 package com.reunitefamilies.reunitefamilies.languageSelection
 
+interface LanguageSelectionContract {
 
-data class LanguageSelection(
-    val language: String,
-    val selected: Boolean
-)
+    interface Model {
 
-fun mockLanguageSelections() = listOf(
-        LanguageSelection("English", false),
-        LanguageSelection("Español", false)
-)
+    }
+
+    interface View {
+        fun setSuggestedLanguages(suggestedLanguages: List<LanguageSelection>)
+    }
+
+    interface Presenter {
+
+    }
+}
