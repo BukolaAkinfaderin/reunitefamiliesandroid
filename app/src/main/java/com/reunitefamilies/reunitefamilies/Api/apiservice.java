@@ -9,6 +9,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.reunitefamilies.reunitefamilies.models.Child;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -51,6 +53,15 @@ public class apiservice {
                         emitter.onNext(uploadMessage);
                     }
                 });
+
+            }
+        });
+    }
+
+    public static Observable<List<TaskModel>> getTasks() {
+        return Observable.create(new ObservableOnSubscribe<List<TaskModel>>() {
+            @Override
+            public void subscribe(final ObservableEmitter<List<TaskModel>> emitter) throws Exception {
 
             }
         });
