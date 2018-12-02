@@ -84,4 +84,7 @@
     <string name="Montserrat_SemiBold">Montserrat-SemiBold</string>
     <string name="Montserrat_Black">Montserrat-Black</string>
     <string name="Montserrat_ExtraBold">Montserrat-ExtraBold</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
