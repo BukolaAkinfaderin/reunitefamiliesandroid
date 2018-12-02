@@ -43,6 +43,7 @@
         <activity android:name=".IdentityVerification.VerificationActivity" />
         <activity android:name=".main.BaseActivity" />
         <activity android:name=".StatusPageActivity"></activity>
+        <activity android:name=".selectSkills.SelectSkillsActivity" />
     </application>
 
 </manifest>
