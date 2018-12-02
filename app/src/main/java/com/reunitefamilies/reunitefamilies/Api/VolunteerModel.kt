@@ -8,5 +8,5 @@ class VolunteerModel: Serializable  {
     var name: String? = null
     var location: String? = null
     var firebase_id: String? = null
-    var languages: ArrayList<String>? = null
+    var languages: List<String>? = null
 }
