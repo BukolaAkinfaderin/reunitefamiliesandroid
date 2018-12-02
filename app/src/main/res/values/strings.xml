@@ -9,7 +9,7 @@
     <!-- Strings related to login -->
     <string name="title_activity_login">Sign in</string>
 
-    <string name="prompt_firstname">First Name</string>
+    <string name="prompt_firstname">Name</string>
     <string name="prompt_lastname">Last Name</string>
     <string name="prompt_name">Your Name</string>
 
@@ -34,13 +34,13 @@
     <string name="anonymous_signin">Anonymous Signin</string>
 
 
-    <string name="main_screen_title">I am looking for</string>
-    <string name="main_screen_title2">my Child.</string>
+    <string name="main_screen_title">I am a Volunteer</string>
+    <string name="main_screen_title2">willing to help.</string>
 
     <string name="identity_verification_heading">Please verify your identity as a custodian inorder to gain access to the system.</string>
 
     <string name="have_account">I have an account.</string>
-    <string name="description_register">If you are a parent or  guardian seeking your child, sign in here.</string>
+    <string name="description_register">If you are a volunteer, sign in here.</string>
 
     <string name="prompt_email">Email</string>
     <string name="prompt_username">Username</string>
@@ -59,7 +59,7 @@
     <string name="number_of_sucessful">Number of Completed Cases: 10</string>
     <string name="step_three">Step 3: Contact a Volunteer</string>
     <string name="add_child_image">Add Child Image</string>
-    <string name="next">Next Step</string>
+    <string name="next">Next</string>
     <string name="id">Passport or \nNational Id</string>
     <string name="birth_cert">Child Birth\n Certificate</string>
     <string name="family_photo">Child or Family\n Photos</string>

@@ -1,9 +1,7 @@
 package com.reunitefamilies.reunitefamilies.signup;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -23,12 +21,10 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.reunitefamilies.reunitefamilies.R;
 import com.reunitefamilies.reunitefamilies.Utils.Utils;
 import com.reunitefamilies.reunitefamilies.landing.LandingActivity;
-import com.reunitefamilies.reunitefamilies.logIn.Dependencies;
 import com.reunitefamilies.reunitefamilies.main.BaseActivity;
 import com.reunitefamilies.reunitefamilies.preferences.AppPreferences;
 import com.reunitefamilies.reunitefamilies.signIn.SigninActivity;
 import com.reunitefamilies.reunitefamilies.signup.model.UserModel;
-import com.reunitefamilies.reunitefamilies.upLoadChildScreen.UploadChildContract;
 
 import java.util.Vector;
 
@@ -41,14 +37,14 @@ public class SignupActivity extends BaseActivity {
     Button signinButton;
     SignupPresenter mSignupPresenter;
     EditText firstNameEditText;
-    EditText lastNameEditText;
+
     EditText emailEditText;
     EditText passwordField;
     ImageView hideShowPassword;
 
     String email = "";
     String password = "";
-    String firstName = "";
+    String name = "";
     String lastName = "";
     String accountType ="guardian";
 
@@ -66,7 +62,7 @@ public class SignupActivity extends BaseActivity {
         signupButton = findViewById(R.id.sign_up_button);
         signinButton = findViewById(R.id.sign_up_signin_button);
         firstNameEditText = findViewById(R.id.first_name_editText);
-        lastNameEditText = findViewById(R.id.last_name_editText);
+
         emailEditText = findViewById(R.id.email_editText);
         passwordField = findViewById(R.id.edittext_password);
         hideShowPassword = findViewById(R.id.signup_show_hide);
@@ -121,8 +117,8 @@ public class SignupActivity extends BaseActivity {
     public void ValidateUser(String accountType) {
         email =  emailEditText.getText().toString();
         password = passwordField.getText().toString();
-        firstName = firstNameEditText.getText().toString();
-        lastName = lastNameEditText.getText().toString();
+        name = firstNameEditText.getText().toString();
+
 
 
 
@@ -134,17 +130,15 @@ public class SignupActivity extends BaseActivity {
         if (password.equalsIgnoreCase("")) {
             checkValid.addElement("Please enter a Password");
         }
-        if (firstName.isEmpty()) {
+        if (name.isEmpty()) {
             checkValid.addElement("Please enter your firstname");
         }
-        if (lastName.isEmpty()) {
-            checkValid.addElement("Please enter your lastname");
-        }
+
         if ( checkValid.size()==0) {
             Utils.showProgressDialog(this);
 
 
-          Register(email, password, firstName,lastName, accountType);
+          Register(email, password, name, accountType);
         }
         else {
             String validMessage = checkValid.elementAt(0).toString();
@@ -154,7 +148,7 @@ public class SignupActivity extends BaseActivity {
     }
 
 
-    public void Register(final String email, String password, final String firstName, String lastName,
+    public void Register(final String email, String password, final String firstName,
                                 final String accountType) {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -168,7 +162,7 @@ public class SignupActivity extends BaseActivity {
                         if (task.isSuccessful()) {
                             //preferences.setIsRegisteredUser(true);
                             //Utils.LogAnalytics("Register", " User Registered", context);
-                            onAuthSuccess(firstName, lastName, task.getResult().getUser(), accountType);
+                            onAuthSuccess(firstName, "", task.getResult().getUser(), accountType);
 
 
                         } else {
