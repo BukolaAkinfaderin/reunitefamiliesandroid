@@ -29,7 +29,6 @@
             android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".logIn.LogInActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".firstScreen.ReuniteFamilies" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
@@ -38,9 +37,7 @@
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="text" />
         <!-- To use multiple models: android:value="face,text,model2,model3" -->
-        <activity android:name=".upLoadChildScreen.UploadChildActivity" />
         <activity android:name=".landing.LandingActivity" />
-        <activity android:name=".IdentityVerification.VerificationActivity" />
         <activity android:name=".main.BaseActivity" />
         <activity android:name=".StatusPageActivity"></activity>
     </application>

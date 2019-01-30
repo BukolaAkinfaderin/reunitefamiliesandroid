@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.reunitefamilies.reunitefamilies.R
-import com.reunitefamilies.reunitefamilies.IdentityVerification.VerificationActivity
 import com.reunitefamilies.reunitefamilies.Utils.Utils
 import com.reunitefamilies.reunitefamilies.adapter.UploadChildAdapter
 import com.reunitefamilies.reunitefamilies.landing.LandingActivity
