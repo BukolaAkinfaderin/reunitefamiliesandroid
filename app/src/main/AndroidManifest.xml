@@ -27,8 +27,6 @@
         </activity>
         <activity android:name=".signup.SignupActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".logIn.LogInActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
 
         <meta-data
             android:name="io.fabric.ApiKey"

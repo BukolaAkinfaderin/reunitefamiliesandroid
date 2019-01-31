@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.reunitefamilies.reunitefamilies.R
 import com.reunitefamilies.reunitefamilies.Utils.Utils
-import com.reunitefamilies.reunitefamilies.adapter.UploadChildAdapter
 import com.reunitefamilies.reunitefamilies.landing.LandingActivity
 import com.reunitefamilies.reunitefamilies.main.BaseActivity
 import com.reunitefamilies.reunitefamilies.signup.SignupActivity
@@ -46,7 +45,6 @@ class SigninActivity: BaseActivity() {
     private var mProgressDialog: ProgressDialog? = null
 
     private lateinit var list: RecyclerView
-    private var uploadChildAdapter: UploadChildAdapter? = null
 
     private lateinit var mDatabaseReference: DatabaseReference
 
